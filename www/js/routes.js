@@ -9,7 +9,11 @@ angular.module('app.routes', [])
   $stateProvider
     
   
-
+      .state('menuInicio', {
+    url: '/menuInicio',
+    templateUrl: 'templates/menuInicio.html',
+    controller: 'menuInicioCtrl'
+  })
       .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html',
@@ -21,7 +25,7 @@ angular.module('app.routes', [])
 
   })  
 
-$urlRouterProvider.otherwise('/login')
+$urlRouterProvider.otherwise('/menuInicio')
 
   
 

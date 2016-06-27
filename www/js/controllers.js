@@ -4,7 +4,7 @@ angular.module('app.controllers', [])
 	$scope.data = {};
 	$scope.loginEmail = function(){
 
-		alert("El usuario es: " + $scope.data.username);
+		//alert("El usuario es: " + $scope.data.username);
 		/*var usuarios = Parse.Object.extend("User");
 		var query = new Parse.Query(usuarios);
 		query.equalTo("username", "rihch888@gmail.com");
@@ -27,15 +27,21 @@ angular.module('app.controllers', [])
 		Parse.User.logIn($scope.data.username, $scope.data.password, {
     		success: function(user) {
       		// Do stuff after successful login.
-      		console.log(user);
-      		alert("success!");
+      		//console.log(user);
+      		//alert("success!");
       		$state.go('menuSesion');
     	},
     	error: function(user, error) {
       		// The login failed. Check error to see why.
-      		alert("error!");
+      		alert("Usuario o contrasena incorrecta");
     }
   });
   };
+})
+
+.controller('menuInicioCtrl', function($scope, $state) {
+	$scope.irLogin = function(){
+		$state.go('login');
+	};
 })
  
