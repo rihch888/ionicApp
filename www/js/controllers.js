@@ -1,6 +1,6 @@
 angular.module('app.controllers', [])
   
-.controller('pageCtrl', function($scope, $state) {
+.controller('loginCtrl', function($scope, $state) {
 	$scope.data = {};
 	$scope.loginEmail = function(){
 

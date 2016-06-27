@@ -10,18 +10,18 @@ angular.module('app.routes', [])
     
   
 
-      .state('page', {
-    url: '/page1',
-    templateUrl: 'templates/page.html',
-    controller: 'pageCtrl'
+      .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'loginCtrl'
   })
       .state('menuSesion', {
     url: '/menuSesion',
     templateUrl: 'templates/menuSesion.html',
-    controller: 'pageCtrl'
+
   })  
 
-$urlRouterProvider.otherwise('/page1')
+$urlRouterProvider.otherwise('/login')
 
   
 
