@@ -19,10 +19,20 @@ angular.module('app.routes', [])
     templateUrl: 'templates/login.html',
     controller: 'loginCtrl'
   })
+      .state('registro', {
+    url: '/registro',
+    templateUrl: 'templates/registro.html',
+    controller: 'registroCtrl'
+  })  
       .state('menuSesion', {
     url: '/menuSesion',
     templateUrl: 'templates/menuSesion.html',
-
+    controller: 'menuSesionCtrl'
+  })
+      .state('score', {
+    url: '/score',
+    templateUrl: 'templates/score.html',
+    controller: 'scoreCtrl'
   })  
 
 $urlRouterProvider.otherwise('/menuInicio')

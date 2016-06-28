@@ -1,47 +1,71 @@
 angular.module('app.controllers', [])
   
+.controller('menuInicioCtrl', function($scope, $state) {
+	$scope.irRegistro = function(){
+		$state.go('registro');
+  	}
+
+	$scope.irLogin = function(){
+		$state.go('login');
+	}
+})
+
+.controller('registroCtrl', function($scope, $state) {
+	$scope.data = {};
+
+	$scope.registrar = function(){
+		var user = new CB.CloudUser();
+		user.set('username', $scope.data.username);
+		user.set('password', $scope.data.password);
+		user.set('email', $scope.data.username);
+		user.signUp({
+				success: function(user) {
+				//Registration successfull
+				alert("Registro exitoso!!");
+				$state.go('menuInicio');
+			},
+				error: function(err) {
+				//Error in user registration.
+				alert("Error!");
+			}
+		});
+  }
+}) 
+
 .controller('loginCtrl', function($scope, $state) {
 	$scope.data = {};
 	$scope.loginEmail = function(){
+		var user = new CB.CloudUser();
+		user.set('username', $scope.data.username);
+		user.set('password', $scope.data.password);
+		user.logIn({
+		success: function(user) {
+			$state.go('menuSesion');
+			//Login successfull
+		},
+		error: function(err) {
+			//Error occured in user registration.
+			alert("Usuario o contrasena incorrecta");
+		}
+	});
 
-		//alert("El usuario es: " + $scope.data.username);
-		/*var usuarios = Parse.Object.extend("User");
-		var query = new Parse.Query(usuarios);
-		query.equalTo("username", "rihch888@gmail.com");
-		query.find({
-		  success: function(results) {
-		    
-		    // Do something with the returned Parse.Object values
-		    for (var i = 0; i < results.length; i++) {
-		      var object = results[i];
-		      alert(object.id + ' - ' + object.get('username'));
-		    }
-		  },
-		  error: function(error) {
-		    alert("Error: " + error.code + " " + error.message);
-		  }
-		});*/
-
-
-
-		Parse.User.logIn($scope.data.username, $scope.data.password, {
-    		success: function(user) {
-      		// Do stuff after successful login.
-      		//console.log(user);
-      		//alert("success!");
-      		$state.go('menuSesion');
-    	},
-    	error: function(user, error) {
-      		// The login failed. Check error to see why.
-      		alert("Usuario o contrasena incorrecta");
-    }
-  });
-  };
+  }
+  $scope.irRegistro = function(){
+		$state.go('registro');
+  	}
 })
 
-.controller('menuInicioCtrl', function($scope, $state) {
-	$scope.irLogin = function(){
-		$state.go('login');
-	};
+.controller('menuSesionCtrl', function($scope, $state) {
+	$scope.data = {};
+	$scope.irScore = function(){
+		$state.go('score');
+  }
 })
- 
+
+.controller('scoreCtrl', function($scope, $state, Chats) {
+	$scope.data = {};
+	//$scope.verScore = function(){
+		$scope.chats = Chats.all();
+		
+  	//}
+})

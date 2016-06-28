@@ -1,0 +1,15 @@
+<ion-view title="Registro" id="registro" class=" ">
+    <ion-content padding="true" class="has-header">
+        <h2 id="page-heading1" style="color:#15BFF4;font-weight:300;text-align:center;" class=" ">Registro</h2>
+        <form id="page-form1" class="list " name="myForm">
+            <label class="item item-input " id="page-input1">
+                <input type="email" placeholder="Correo Ectronico" ng-model="data.username">
+            </label>
+            <label class="item item-input " id="page-input2" >
+                <input type="password" placeholder="Contraseña" ng-model="data.password">
+            </label>
+            
+        </form>
+        <button id="page-button1" class=" button button-calm  button-block " ng-click="registrar()">Registrar</button>
+    </ion-content>
+</ion-view>
