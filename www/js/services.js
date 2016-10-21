@@ -12,7 +12,7 @@ angular.module('app.services', [])
     //query.equalTo('score', 11); //find all Students who age is 21
     query.find({
     success: function(list){
-<<<<<<< HEAD
+
       //alert("Tamano: "+list.length);
       //chats.length=list.length;
       for (var i =  0; i < list.length; i++) {
@@ -54,7 +54,7 @@ angular.module('app.services', [])
 	    //Error in retrieving the data.
 	    }
     	});	*/
-=======
+
       alert("Tamano: "+list.length);
       //chats.length=list.length;
       for (var i =  0; i < list.length; i++) {
@@ -64,7 +64,7 @@ angular.module('app.services', [])
         chats[i].username=list[i].get('user').get('_id');
         
         //chats[i].username=list[i].get('id');
->>>>>>> upstream/master
+
       }
       
       
