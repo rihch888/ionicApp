@@ -23,7 +23,11 @@
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [
+<<<<<<< HEAD
     "ios",
     "android"
+=======
+    "ios"
+>>>>>>> upstream/master
   ]
 }
